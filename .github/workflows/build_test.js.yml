@@ -7,7 +7,22 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+ npm_security_test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout of the repo
+      uses: actions/checkout@v4
+    - name: Use Node.js 20
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20.x
+        cache: 'npm'
+    - name: Install dependencies
+      run: npm install
+    - name: run Integration Tests
+      run: npm run-test-security
+
+ integration-test:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout of the repo
