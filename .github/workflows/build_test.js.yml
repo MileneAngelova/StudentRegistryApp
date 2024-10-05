@@ -20,7 +20,7 @@ jobs:
         cache: 'npm'
     - name: Install dependencies
       run: npm install
-    - name: run Integration Tests
+    - name: run Security Tests
       run: npm run test-npm-security
 
  integration-tests:
