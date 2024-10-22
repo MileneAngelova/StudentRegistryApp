@@ -41,6 +41,7 @@ jobs:
 
  deploy-render:
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
     needs: integration-tests
     steps:
       - name: Deploy to production
